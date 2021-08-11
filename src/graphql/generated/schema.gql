@@ -1,0 +1,32 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Mutation {
+  createProduct(newProductData: NewProductInput!): Product!
+}
+
+input NewProductInput {
+  description: String!
+  images: [String!]!
+  name: String!
+  price: Float!
+}
+
+type Product {
+  description: String!
+  id: ID!
+  images: String!
+  name: String!
+  price: Float!
+}
+
+type ProductPage {
+  nodes: [Product!]!
+  totalRows: Float!
+}
+
+type Query {
+  product(id: String!): Product!
+  products(skip: Int = 0, take: Int = 25): ProductPage!
+}

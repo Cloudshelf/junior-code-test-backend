@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  redis:
+    image: redis:3.2-alpine
+    container_name: redis-junior-cloudshelf
+    ports:
+      - "6379:6379"
+  posgres:
+    image: postgres
+    container_name: postgres-cloudshelf-junior-exercise
+    environment:
+      - POSTGRES_DB=cloudshelf-junior-exercise
+      - POSTGRES_USER=cloudshelf
+      - POSTGRES_PASSWORD=cloudshelf
+    ports:
+      - "5432:5432"
